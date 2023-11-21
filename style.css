@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+body{
+    background-image: url(https://cdn.pixabay.com/photo/2021/01/08/13/38/road-5899921_1280.png);
+    background-size: cover;
+    overflow: hidden;
+}
+
+.direita{
+    width: 220px;
+    position: absolute;
+    left: -30vw;
+    bottom: 0;
+    animation-name: caminhar_direita; /*OBRIGATÓRIO   para "puxar/linkar" a animacao*/
+    animation-duration: 5s;   /*OBRIGATÓRIO   tempo de duração da animação*/
+    animation-timing-function: cubic-bezier(.75,.58,.32,.47); /*ease = suavizar tudo; ease-in/out: suavização apenas no começo/final;  linear:sem suavização
+    steps: em quantos frames deve ser realizada a animação;   cubic-bezier: animações pré definas, podemos montar nossa própria no...(https://cubic-bezier.com/#.75,.58,.32,.47)*/
+    animation-delay: 1s; /*Atraso para iniciar a animação, ao carregar a página*/
+    animation-iteration-count: infinite; /*Quantidade de vezes que a animação vai ocorrer, pode ser de 0 ate o infinito, incluindo numeros quebrados para animações quebradas*/
+    /*animation-direction: alternate; /*Para definir a direção de começo da animação. alernate: "alternar" entre ambas as direções;*/
+    /* animation-fill-mode: backwards; /*Para definir onde vai ficar a animação após acabar*/
+    /* animation-play-state: paused; /*Definir se a animação vai acontecer ou não*/
+}
+.esquerda{
+    width: 220px;
+    position: absolute;
+    bottom: 0;
+    left: 130vw;
+    animation-name: caminhar_esquerda; /*OBRIGATÓRIO   para "puxar/linkar" a animacao*/
+    animation-duration: 5s;   /*OBRIGATÓRIO   tempo de duração da animação*/
+    animation-timing-function: cubic-bezier(.75,.58,.32,.47); /*ease = suavizar tudo; ease-in/out: suavização apenas no começo/final;  linear:sem suavização
+    steps: em quantos frames deve ser realizada a animação;   cubic-bezier: animações pré definas, podemos montar nossa própria no...(https://cubic-bezier.com/#.75,.58,.32,.47)*/
+    animation-delay: 1s; /*Atraso para iniciar a animação, ao carregar a página*/
+    animation-iteration-count: infinite; /*Quantidade de vezes que a animação vai ocorrer, pode ser de 0 ate o infinito, incluindo numeros quebrados para animações quebradas*/
+    animation-direction: normal; /*Para definir a direção de começo da animação. alernate: "alternar" entre ambas as direções;*/
+    /* animation-fill-mode: backwards; /*Para definir onde vai ficar a animação após acabar*/
+    /* animation-play-state: paused; /*Definir se a animação vai acontecer ou não*/
+}
+
+.explosao{
+    width: 440px;
+    position: absolute;
+    bottom: -40%;
+    right: 30vw;
+    animation-name: explosao; /*OBRIGATÓRIO   para "puxar/linkar" a animacao*/
+    animation-duration: 5s;   /*OBRIGATÓRIO   tempo de duração da animação*/
+    animation-timing-function: cubic-bezier(.92,-0.02,.71,.9); /*ease = suavizar tudo; ease-in/out: suavização apenas no começo/final;  linear:sem suavização
+    steps: em quantos frames deve ser realizada a animação;   cubic-bezier: animações pré definas, podemos montar nossa própria no...(https://cubic-bezier.com/#.75,.58,.32,.47)*/
+    animation-delay: 1s; /*Atraso para iniciar a animação, ao carregar a página*/
+    animation-iteration-count: infinite; /*Quantidade de vezes que a animação vai ocorrer, pode ser de 0 ate o infinito, incluindo numeros quebrados para animações quebradas*/
+    animation-direction: normal; /*Para definir a direção de começo da animação. alernate: "alternar" entre ambas as direções;*/
+    /* animation-fill-mode: backwards; /*Para definir onde vai ficar a animação após acabar*/
+    /* animation-play-state: paused; /*Definir se a animação vai acontecer ou não*/
+}
+
+/*img:hover {
+    animation-play-state: paused; /*Definir se a animação vai acontecer ou não
+}*/
+
+@keyframes caminhar_direita {
+    from {
+        transform: translateX(0); /*Para mexer apenas no eixo "X"*/
+    }
+ 
+    to {
+        transform: translateX(calc(70vw)); /*Para evitar que o objeto encoste no final da página, devemos subtrair o tamanho dele do total da tela*/
+    }
+}
+@keyframes caminhar_esquerda {
+    from {
+        transform: translateX(calc(100vw)); /*Para mexer apenas no eixo "X"*/
+    }
+ 
+    to {
+        transform: translateX(-80vw); /*Para evitar que o objeto encoste no final da página, devemos subtrair o tamanho dele do total da tela*/
+    }
+}
+@keyframes explosao {
+    from {
+        transform: translateY(50vh); /*Para mexer apenas no eixo "X"*/
+    }
+ 
+    to {
+        transform: translateY(-35vh); /*Para evitar que o objeto encoste no final da página, devemos subtrair o tamanho dele do total da tela*/
+    }
+}
